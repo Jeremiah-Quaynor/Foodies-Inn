@@ -1,0 +1,31 @@
+.customers{
+    display: flex;
+    background:#d2ddec;
+    border-radius: 10px;
+    height: 7%;
+    align-items: center;
+    margin-bottom: 2%;
+    overflow: auto;
+}
+.small-circle{
+    /* background: rgb(103, 60, 221); */
+    width: 100px;
+    height: 55px;
+    border-radius: 47%;
+    margin-right: 10px;
+    align-self:center;
+}
+.customers:hover{
+    font-size: larger;
+    height: 100px;
+}
+.mm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.mm img{
+    width: 90%;
+    height: 95%;
+    /* margin-bottom: 10px; */
+}
+
