@@ -8,7 +8,7 @@ const Header = props => {
     return(
         <>
             <header className={classes.header}>
-                <h1>ReactMeals</h1>
+                <h1>Foodies Inn</h1>
                 <HeaderCartButton />
             </header>
             <div className={classes['main-image']}>
