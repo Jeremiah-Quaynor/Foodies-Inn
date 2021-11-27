@@ -1,20 +1,29 @@
-import './App.css';
-import Home from './components/home/home';
-import { Route, Routes } from 'react-router';
-import Recipes from './components/recipies/recipes';
-// import FoodAndRecipe from './components/recipies/foodAndRecipe';
+import { useState } from 'react';
 
-
+import Header from './components/Layout/Header';
+import Meals from './components/Meals/Meals';
+import Cart from './components/Cart/Cart';
+import CartProvider from './store/CartProvider';
 
 function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   return (
-    <>
-    <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/home" element={<Home/>} />
-      <Route path='/recipes' element={<Recipes />} />
-    </Routes>
-    </>
+    <CartProvider>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
+      <main>
+        <Meals />
+      </main>
+    </CartProvider>
   );
 }
 
